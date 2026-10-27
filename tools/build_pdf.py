@@ -24,7 +24,10 @@ CSS = '''
 * { box-sizing: border-box; }
 body { font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; color: #141414; font-size: 11pt; line-height: 1.75; }
 h1 { font-size: 22pt; border-bottom: 3pt solid #141414; padding-bottom: 6pt; margin: 0 0 12pt; page-break-before: always; }
-h2 { font-size: 15pt; margin: 18pt 0 8pt; padding-left: 8pt; border-left: 5pt solid #FF5A1F; }
+h2 { font-size: 15pt; margin: 18pt 0 8pt; padding-left: 8pt; border-left: 5pt solid #FF5A1F; break-after: avoid; page-break-after: avoid; }
+h2 + *, p:has(> strong:only-child) + blockquote { break-before: avoid; }
+p:has(> strong:only-child) { break-after: avoid; page-break-after: avoid; }
+blockquote, tr { break-inside: avoid; }
 h3 { font-size: 12.5pt; margin: 14pt 0 6pt; }
 table { border-collapse: collapse; width: 100%; margin: 8pt 0 12pt; font-size: 10.5pt; }
 th { background: #141414; color: #fff; text-align: left; padding: 6pt 8pt; }
